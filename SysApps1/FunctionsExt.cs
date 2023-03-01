@@ -45,5 +45,13 @@ namespace SysApps1
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
         #endregion
+
+        #region functions from Delphi Dll
+        [DllImport("Project1.dll")]
+        public static extern double Circle(double r);
+
+        [DllImport("Project1.dll")]
+        public static extern double Square(double r);
+        #endregion
     }
 }

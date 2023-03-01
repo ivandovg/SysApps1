@@ -13,10 +13,22 @@ namespace SysApps1
             Console.Title = "System Applicatins - 1";
             //TestMessageBox();
             //TestShowWindow();
-            TestGetindowText();
+            //TestGetindowText();
+            TestDllImportDelphi();
 
             Console.WriteLine("press ENTER key...");
             Console.ReadLine();
+        }
+
+        static void TestDllImportDelphi()
+        {
+            Console.Write("Radius = ");
+            double r = double.Parse(Console.ReadLine());
+            Console.WriteLine($"Radius = {r}, S = {FunctionsExt.Circle(r)}");
+
+            Console.Write("A = ");
+            double a = double.Parse(Console.ReadLine());
+            Console.WriteLine($"A = {a}, S = {FunctionsExt.Square(a)}");
         }
 
         static void TestMessageBox()
