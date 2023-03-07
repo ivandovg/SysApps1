@@ -41,10 +41,11 @@ namespace SysApps3_2
                 lsbValues.BeginUpdate();
                 try
                 {
-                    for (int i = 0; i < function.Y.Count; i++)
-                    {
-                        lsbValues.Items.Add("Y = " + function.Y[i]);
-                    }
+                    //for (int i = 0; i < function.Y.Count; i++)
+                    //{
+                    //    lsbValues.Items.Add("Y = " + function.Y[i]);
+                    //}
+                    lsbValues.DataSource = function.Y;
                     btnCalculate.Enabled = true;
                 }
                 finally
