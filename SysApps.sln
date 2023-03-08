@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps3_2", "SysApps3_2\Sy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps4_1", "SysApps4_1\SysApps4_1.csproj", "{18680A11-6815-436D-9375-439B62D0F9C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysApps5_1", "SysApps5_1\SysApps5_1.csproj", "{7F74941E-74E1-4E35-AD56-658431E14A59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{18680A11-6815-436D-9375-439B62D0F9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18680A11-6815-436D-9375-439B62D0F9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18680A11-6815-436D-9375-439B62D0F9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F74941E-74E1-4E35-AD56-658431E14A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F74941E-74E1-4E35-AD56-658431E14A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F74941E-74E1-4E35-AD56-658431E14A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F74941E-74E1-4E35-AD56-658431E14A59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

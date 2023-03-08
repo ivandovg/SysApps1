@@ -82,7 +82,15 @@ namespace SysApps2_1
 
         private void Process_Exited(object sender, EventArgs e)
         {
-            MessageBox.Show("Процесс завершил работу!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Process process = sender as Process;
+            if (process != null)
+            {
+                MessageBox.Show($"Процесс {process.ProcessName} завершил работу!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Процесс завершил работу!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         /*метод, получающий PID родительского процесса (использует WMI)*/
