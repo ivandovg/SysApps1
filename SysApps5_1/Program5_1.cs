@@ -75,6 +75,7 @@ namespace SysApps5_1
         {
             Console.WriteLine($"Enter Counter, Thread = {Thread.CurrentThread.ManagedThreadId}");
             // установка блокировки или перевод мьютекса в "несигнальное" состояние
+
             mutex.WaitOne();
             try
             {
