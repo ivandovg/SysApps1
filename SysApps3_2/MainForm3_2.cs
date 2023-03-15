@@ -13,7 +13,7 @@ namespace SysApps3_2
 {
     public partial class MainForm3_2 : Form
     {
-        public MainForm3_2()
+        public MainForm3_2(string[] args)
         {
             InitializeComponent();
         }

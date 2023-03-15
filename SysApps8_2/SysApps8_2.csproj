@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{009197F0-12FE-4D76-BB10-A10EE6B05362}</ProjectGuid>
+    <ProjectGuid>{7D81E5CC-AD54-40E5-918D-01942A0BFD68}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SysApps7_1</RootNamespace>
-    <AssemblyName>SysApps7_1</AssemblyName>
+    <RootNamespace>SysApps8_2</RootNamespace>
+    <AssemblyName>SysApps8_2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program7_1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

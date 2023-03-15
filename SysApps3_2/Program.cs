@@ -12,11 +12,11 @@ namespace SysApps3_2
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm3_2());
+            Application.Run(new MainForm3_2(args));
         }
     }
 }

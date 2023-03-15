@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SysApps7_1
 {
-    internal class Program
+    internal class Program7_1
     {
         static void Main(string[] args)
         {
@@ -20,13 +20,23 @@ namespace SysApps7_1
             // Test6TasksCanceled();
             // Test7TasksCanceled();
 
-            Console.WriteLine("использование Parallel.For>> ");
-            Parallel.For(1, 10, FactorialParallel);
+            //Console.WriteLine("использование Parallel.For>> ");
+            //Parallel.For(1, 10, FactorialParallel);
 
             Console.WriteLine("\nиспользование Parallel.ForEach>> ");
             ParallelLoopResult result = Parallel.ForEach<int>(
-                new List<int>() { 1, 3, 5, 8 },
+                new List<int>() { 1, 3, 5, 8, 7, 11 },
                 FactorialParallel);
+            if (result.IsCompleted)
+            {
+                Console.WriteLine("Цикл выполнил все итерации");
+            }
+            else
+            {
+                Console.WriteLine("Цикл прерван на итерации #" + result.LowestBreakIteration);
+            }
+            // тест использования паралельных запросов Parallel LINQ
+            Test1PLINQ();
 
             Console.WriteLine("Press Enter key...");
             Console.ReadLine();
@@ -116,7 +126,7 @@ namespace SysApps7_1
 
         private static int Factorial(int x)
         {
-            Thread.Sleep(100);
+            Thread.Sleep(200);
             if (x == 1) return 1;
             else return x * Factorial(x - 1);
         }
@@ -284,9 +294,11 @@ namespace SysApps7_1
             }
         }
 
-        private static void FactorialParallel(int x)
+        private static void FactorialParallel(int x, ParallelLoopState parallelLoopState)
         {
             int result = 1;
+            if (x == 5) parallelLoopState.Break();
+            //if (x == 5) parallelLoopState.Stop();
             for (int i = 1; i <= x; i++)
             {
                 result *= i;
@@ -294,6 +306,37 @@ namespace SysApps7_1
             Console.WriteLine("Выполняется задача {0}", Task.CurrentId);
             Console.WriteLine("Факториал числа {0} равен {1}", x, result);
             Thread.Sleep(2000);
+        }
+
+        private static void Test1PLINQ()
+        {
+            //int[] ints = { 4, 6, 7, 2, 8, 9, 3, 12, 9 };
+            int[] ints = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //var factorials = (from n in ints.AsParallel()
+            //                  select Factorial(n));
+            //foreach (int n in factorials)
+            //{
+            //    Console.Write(n+"\t");
+            //}
+
+            //ints.AsParallel().Select(n => Factorial(n)).ForAll(Console.WriteLine);
+            //ints.AsParallel().Select(n => FactorialCycle(n)).ForAll(Console.WriteLine);
+            ints.AsParallel().Select(n => FactorialCycle(n)).ForAll(f =>
+            {
+                Console.WriteLine("\t! = " + f);
+            });
+        }
+
+        private static int FactorialCycle(int x)
+        {
+            Thread.Sleep(200);
+            int n = 1;
+            for (int i = 1; i < x; i++)
+            {
+                n *= i;
+            }
+            Console.WriteLine($"End ThreadId = {Thread.CurrentThread.ManagedThreadId}");
+            return n;
         }
     }
 }
