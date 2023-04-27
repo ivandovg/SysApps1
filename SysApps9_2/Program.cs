@@ -20,7 +20,7 @@ namespace SysApps9_2
         private static void Print(string s)
         {
             Thread.Sleep(2000);
-            Console.WriteLine(s);
+            Console.WriteLine(DateTime.Now.ToString() + ": " + s);
         }
 
         private static async Task PrintAsync(string s)
