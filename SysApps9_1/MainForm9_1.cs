@@ -36,6 +36,21 @@ namespace SysApps9_1
 
         private void btnSetHook_Click(object sender, EventArgs e)
         {
+            //Task.Run(() =>
+            //{
+            //    hookKeyboard = SetHook(HookProcedure, HookType.WH_KEYBOARD_LL);
+            //    if (hookKeyboard != IntPtr.Zero)
+            //    {
+            //        Action a = () =>
+            //        {
+            //            btnSetHook.Enabled = false;
+            //            btnUnsetHook.Enabled = true;
+            //            lsbHistory.Items.Insert(0, "Keybord Hook Setup!");
+            //        };
+            //        Invoke(a);
+            //    }
+            //});
+
             hookKeyboard = SetHook(HookProcedure, HookType.WH_KEYBOARD_LL);
             if (hookKeyboard != IntPtr.Zero)
             {

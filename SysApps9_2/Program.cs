@@ -17,10 +17,11 @@ namespace SysApps9_2
             Console.ReadLine();
         }
 
-        private static void Print(string s)
+        private static async void Print(string s)
         {
-            Thread.Sleep(2000);
-            Console.WriteLine(s);
+            await Task.Delay(2000);
+            await Console.Out.WriteLineAsync(s);
+
         }
 
         private static async Task PrintAsync(string s)
