@@ -11,6 +11,7 @@ namespace SysApps9_2
     {
         async static Task Main(string[] args)
         {
+            Console.Title = "Test";
             await Console.Out.WriteLineAsync("Start Main");
             await PrintAsync("(1)Hello World!");
             Thread.Sleep(2000);
@@ -29,6 +30,7 @@ namespace SysApps9_2
         private static async Task PrintAsync(string s)
         {
             Console.WriteLine("Start PrintAsync");
+            await Task.Run(() => Print(s));
             await Task.Run(() => Print(s));
             Console.WriteLine("End PrintAsync");
         }
