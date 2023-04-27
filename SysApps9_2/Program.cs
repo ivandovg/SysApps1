@@ -12,15 +12,18 @@ namespace SysApps9_2
         async static Task Main(string[] args)
         {
             await Console.Out.WriteLineAsync("Start Main");
-            await PrintAsync("Hello World!");
+            await PrintAsync("(1)Hello World!");
+            Thread.Sleep(2000);
+            await PrintAsync("(2)Hello World!");
             await Console.Out.WriteLineAsync("End Main, press Enter key");
             Console.ReadLine();
         }
 
-        private static void Print(string s)
+        private async static void Print(string s)
         {
             Thread.Sleep(2000);
-            Console.WriteLine(DateTime.Now.ToString() + ": " + s);
+            //Console.WriteLine(DateTime.Now.ToString() + ": " + s);
+            await Console.Out.WriteLineAsync(DateTime.Now.ToString() + ": " + s);
         }
 
         private static async Task PrintAsync(string s)
